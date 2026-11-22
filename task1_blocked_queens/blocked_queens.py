@@ -17,7 +17,7 @@ import time
 INF = float("inf")
 
 
-# ---------------------------------------------------------------- problemi
+# --------------------------- problemi ---------------------------
 class BlockedQueens:
     def __init__(self, n, blocked):
         self.n = n
@@ -45,7 +45,7 @@ class BlockedQueens:
         return len(state) == self.n
 
 
-# ------------------------------------------------------------- heuristikat
+# --------------------------- heuristikat ---------------------------
 def h1_remaining(p, state):
     """h1 = numri i mbretëreshave që mbeten (N - k). ADMISSIBLE: çdo mbretëreshë
     kërkon të paktën një hap."""
@@ -75,7 +75,7 @@ HEURISTICS = {"h1_remaining": h1_remaining,
               "h3_weighted": h3_weighted}
 
 
-# ------------------------------------------------------------------- A*
+# --------------------------- A* ---------------------------
 def astar(p, h):
     """A*: f = g + h. Në rast barazimi në f, preferohet g më i madh (më thellë)."""
     counter = itertools.count()
@@ -103,7 +103,7 @@ def astar(p, h):
     return None, INF, expanded, generated
 
 
-# ------------------------------------------------------------ instancat
+# --------------------------- instancat ---------------------------
 def random_instance(n, n_blocked, seed):
     rnd = random.Random(seed)
     cells = [(r, c) for r in range(n) for c in range(n)]
