@@ -8,6 +8,7 @@ Instalimi: `pip install -r requirements.txt`
 |---|---|---|
 | 1. Blocked N-Queens (A*, 3 heuristika) | `task1_blocked_queens/blocked_queens.py` | `python task1_blocked_queens/blocked_queens.py` |
 | 2. SAT - uljet e mysafirëve | `task2_sat/seating_sat.py` | `python task2_sat/seating_sat.py` |
+| 3. Killer Sudoku (CSP, CP-SAT) | `task3_killer_sudoku/killer_sudoku.py` | `python task3_killer_sudoku/killer_sudoku.py` |
 
 ## 1. Blocked N-Queens
 Vendosen N mbretëresha në tabelën NxN ashtu që asnjëra të mos sulmojë tjetrën (rresht, kolonë, diagonale)
@@ -28,3 +29,7 @@ Variabla `x[g][t]` (mysafiri g ulet në tavolinën t); klauzola: (1) çdo mysafi
 (ekuivalencë), (6) gjinia: |M−F| ≤ 3 me 10 vende ⇔ 4 ≤ M ≤ 6 (kardinalitet me sequential counter).
 Instanca (gjinitë, çiftet e ndaluara dhe të detyruara) gjenerohet me seed fiks. Gjeneron `seating.cnf`
 (DIMACS) dhe e zgjidh me Glucose3; zgjidhja verifikohet në kod.
+
+## 3. Killer Sudoku
+CP-SAT: `AllDifferent` për rreshta/kolona/blloqe/kafaze + shuma e kafazit. Puzzle (31 kafaze) është gjeneruar
+nga ne nga një grid i zgjidhur dhe ka zgjidhje unike (kontrollohet duke kërkuar 2 zgjidhje).
